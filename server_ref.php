@@ -1,19 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <document>
-  <Data id="arrayExpToLevel" data="1;2;3;4;5;6;7;8;9;10000">
-  </Data>
-  <Data id="arrayLang_str" data="ru;ua;en">
-  </Data>
-  <Data id="prices_vk" data="din_string;4;3;2">
-  </Data>
-  <Data id="prices_fb" data="din_string;4;3;2">
-  </Data>
-  <Data id="prices_steam" data="din_string;4;3;2">
-  </Data>
-</document>
-
-<?xml version="1.0" encoding="utf-8"?>
-<document>
   <MoneyDiamond>565688</MoneyDiamond>
   <MoneyGold>5584689</MoneyGold>
   <Premium1Sec>2000,3</Premium1Sec>
@@ -268,7 +254,3 @@
   <Inv item_id="0" cnt="4" />
   <Achievement din_attrib="din_attrib" />
 </document>
-
-5|42|31|51|5|10|3.2|1|1|1|1|1|1|1|0|0|0|1|1|0|0:1:2||1|2|3|1|1|2|1|5|4|3|0|0:3|1|1|1|20|20|32|12|15|12|32|10|11|12|32|11|15|12|3|0|0||0|1|2|3|1|2|5|1|2|2|2|1|1|1|3|1|0|1|2|1|1|0|2|3|1|0|3|1|0|1|1|1|1|1|1|1|1|1|2|5|30|2|2|3|1|5|6|4|8|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1||11|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1
-
-5|10
