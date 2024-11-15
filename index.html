@@ -1,92 +1,188 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="utf-8">
-<title>.</title>
-<script src="http://bqgames.ddns.net/jquery_official_din.js"></script>
-</head>
-
-<body>
-<button id="toggleMenu">TOGGLE SHOW MENU</button>
-
-<div id="dinMenu">
-<a href="https://www.youtube.com/channel/UCmwC34TW0fGJiMxOF3pWCXw" class="btn">YT</a>
-<a href="ameno/" class="btn">AMENO Quest(My)</a>
-<a href="compare/" class="btn">COMPARE text(text.num2word.ru)</a>
-<a href="lines98/" class="btn">Lines Game(lines98.ru)</a>
-<a href="https://www.imagetotext.info/ru/image-to-text" class="btn">Картинка в Текст(imagetotext.info)</a>
-<a href="https://vocalremover.org/uk/" class="btn">Split Song(vocalremover.org)</a>
-<a href="http://removecomments.com/" class="btn">Comments Remover(removecomments.com)</a>
-<a href="https://mothereff.in/html-entities" class="btn">HTML Symbols To Normal(mothereff.in)</a>
-<a href="https://prozavr.ru/tools/skachat_oblogku_youtube.php" class="btn">Скачать прев'ю ютуб(prozavr.ru)</a>
-<a href="https://text.ru/antiplagiat" class="btn">Пошуковик для великих текстів(text.ru)</a>
-<a href="DS/" class="btn">Fake DS</a>
-<a href="DS/DiscordSCAM.txt" class="btn">Fake DS Log</a>
-<a href="flash/" class="btn">Test Flash</a>
-<a href="AdBlockPremiumFiltersByDinton/" class="btn">AdBlockPremiumFilters</a>
-<a href="G.png" class="btn">?</a>
-</div>
-
-<script>
-$("#toggleMenu").click(function() {
-    $("#dinMenu").toggle();
-});
-</script>
-
-<div class="speeeed">
-    <style class="spd">
-        body {
-            background-image:url('fonWS.gif');
-            background-position: center;
-            background-size: cover;
+  <script>
+    const observer = new PerformanceObserver((list) => {
+      list.getEntries().forEach((entry) => {
+        console.log('%o', entry);
+      });
+    });
+    observer.observe({type: "navigation", buffered: true});
+  </script>
+  <script src="//archive.org/includes/athena.js" type="text/javascript"></script>
+  <script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app221.us.archive.org';v.server_ms=300;archive_analytics.send_pageview({});});</script>
+  <script type="text/javascript" src="/_static/js/bundle-playback.js?v=krFivnjJ" charset="utf-8"></script>
+  <script type="text/javascript" src="/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
+  <script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden"};</script>
+  <script type="text/javascript" src="/_static/js/ruffle/ruffle.js"></script>
+  <link rel="stylesheet" type="text/css" href="/_static/css/banner-styles.css?v=S1zqJCYt" />
+  <link rel="stylesheet" type="text/css" href="/_static/css/iconochive.css?v=3PDvdIFv" />
+  
+  <meta http-equiv="Content-Language" content="ru">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.6.1.min.js"></script>
+  <link rel="STYLESHEET" type="text/css" href="http://batla.ru/test/css/style.css">
+  
+  <script>
+    var ad_id = '';
+    function g(x) {
+      if (document.layers) {
+        return document.layers[x];
+      }
+      if (document.all && document.all.item) {
+        return document.all[x];
+      }
+      if (document.getElementById) {
+        return document.getElementById(x);
+      }
+    }
+    function OnLoadF() {
+      $("#direct_login_back_1").animate({top: '274px'}, 700).animate({top: '274px'}, 200);
+      $("#direct_login_back_2").animate({top: '433px'}, 700).animate({top: '423px'}, 200);
+    }
+    function ShowGameFBAnim() {
+      $("#direct_login_back_1").animate({top: '274px'}, 200).animate({top: '-400px'}, 700);
+      $("#direct_login_back_2").animate({top: '433px'}, 200).animate({top: '200px'}, 700, ShowGameFB);
+    }
+    function ShowGameVKAnim() {
+      $("#direct_login_back_1").animate({top: '274px'}, 200).animate({top: '-400px'}, 700);
+      $("#direct_login_back_2").animate({top: '433px'}, 200).animate({top: '-200px'}, 700, ShowGameVK);
+    }
+  </script>
+  
+  <script type="text/javascript">
+    var fb_id = "";
+    var fb_at = "";
+    var fb_name = "";
+    var fb_picture = "";
+    function CheckLogin(auto_connect) {
+      FB.getLoginStatus(function(response) {
+        if (response.status === 'connected') {
+          fb_id = response.authResponse.userID;
+          fb_at = response.authResponse.accessToken;
+          OnLogin(auto_connect);
+        } else {
+          OnLoginFailed();
         }
-    </style>
-</div>
-
-<audio id="omfgaudio" loop="">
-    <source src="fonWS.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-    var speed=0;
-    var audio = document.getElementById('omfgaudio');
-    if (window.addEventListener) {
-        window.addEventListener("click", function(e){
-            audio.play();
-            if(speed<5) {
-                speed++;
-                if(speed>1)$(".spd").remove();
-                if(speed==2)$(".speeeed").prepend("<style class=spd>body{background-image:url('fonWS2.gif');background-position: center;background-size: cover;}</style>");
-                else if(speed==3)$(".speeeed").prepend("<style class=spd>body{background-image:url('fonWS3.gif');background-position: center;background-size: cover;}</style>");
-                else if(speed==4)$(".speeeed").prepend("<style class=spd>body{background-image:url('fonWS4.gif');background-position: center;background-size: cover;}</style>");
-                else $(".speeeed").prepend("<style class=spd>body{background-image:url('fonWS5.gif');background-position: center;background-size: cover;}</style>");
-            }
-        }, true);
+      });
     }
-</script>
-
-<style>
-    body, html {
-        width:100%;
-        height:100%;
-        overflow:hidden;
+    function OnLogin(auto_connect) {
+      FB.api("/me?fields=picture,name", function(response) {
+        fb_name = response.name;
+        fb_picture = response.picture;
+        if (auto_connect == 1) {
+          ShowGameFBAnim();
+        }
+      });
     }
-
-    iframe {
-        width:100%;
-        height:100%;
-        border:none;
+    function ShowGameFB() {
+      window.location = "http://batla.ru/test/index.php?platform=direct&login_type=fb&fb_id=" + encodeURIComponent(fb_id) + "&fb_at=" + encodeURIComponent(fb_at) + "&social_name=" + encodeURIComponent(fb_name) + "&social_icon=" + encodeURIComponent(fb_picture) + "&ad_id=" + encodeURIComponent(ad_id);
+      ShowGame();
     }
-
-    .btn {
-        display: inline-block;
-        background: #000000;
-        color: #fff;
-        padding: 1rem 1.5rem;
-        text-decoration: none;
-        border-radius: 20px; /* кути */
+    function OnLoginFailed() {
+      // Handle login failure
     }
-</style>
+    function LoginFB() {
+      if (fb_id != 0 && fb_name != "") {
+        ShowGameFBAnim();
+        return;
+      }
+      FB.login(function(response) {
+        if (response.authResponse) {
+          CheckLogin(1);
+        }
+      }, {scope: 'user_friends'});
+    }
+  </script>
+</head>
+<body onload="OnLoadF();">
+  <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0" align="center" style="background-color: #0d1528;">
+    <tr>
+      <td width="50%" class="index_main_table_left_gg"></td>
+      <td width="900" valign="top">
+        <div id="fb-root"></div>
+        <script>
+          (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=643676185684273";
+            fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));
+        </script>
+        
+        <div id="vk_api_transport"></div>
+        <script type="text/javascript">
+          var vk_id = "";
+          var vk_name = "";
+          var vk_picture = "";
+          var vk_auto_login = 0;
 
+          window.vkAsyncInit = function() {
+            VK.init({apiId: 3032868});
+          };
+
+          setTimeout(function() {
+            var el = document.createElement("script");
+            el.type = "text/javascript";
+            el.src = "//vkontakte.ru/js/api/openapi.js";
+            el.async = true;
+            document.getElementById("vk_api_transport").appendChild(el);
+          }, 0);
+        </script>
+
+        <div id="direct_login_back_1" style="position: absolute; left: 50%; top: -400px; display: hidden; margin: 0 0 0 -184px;">
+          <img src="/batla.ru/i/direct_login_back_1.png" style="position: absolute; left: 0px; top: 0px;">
+          <a class="c_loby_txt0" style="position: absolute; top: 10px; left: 0px; width: 360px; font-weight: bold; color: #ffee00;">
+            <center>Вход через соц. сеть:</center>
+          </a>
+          <div id="btn_fb" style="cursor: pointer;" onclick="LoginFB();">
+            <img id="fb_btn" src="/batla.ru/test/i/button_dark_139_40.png" style="position: absolute; left: 36px; top: 71px;">
+            <a class="c_loby_txt0" style="position: absolute; top: 76px; left: 74px; width: 98px; font-weight: bold; color: #ffee00; font-size: 11px;">
+              <center>Войти<br>Facebook</center>
+            </a>
+          </div>
+          <div id="btn_vk" style="cursor: pointer;" onclick="LoginVK();">
+            <img id="vk_btn" src="/batla.ru/test/i/button_dark_139_40.png" style="position: absolute; left: 206px; top: 71px;">
+            <a class="c_loby_txt0" style="position: absolute; top: 76px; left: 244px; width: 98px; font-weight: bold; color: #ffee00; font-size: 11px;">
+              <center>Войти<br>ВКонтакте</center>
+            </a>
+          </div>
+        </div>
+
+        <div id="direct_login_back_2" style="position: absolute; left: 50%; top: -200px; display: hidden; margin: 0 0 0 -184px;">
+          <img src="/batla.ru/i/direct_login_back_2.png" style="position: absolute; left: 0px; top: 0px;">
+          <a class="c_loby_txt0" style="position: absolute; top: 10px; left: 0px; width: 360px; font-weight: bold; color: #ffee00;">
+            <center>Вход в игру:</center>
+          </a>
+          <form id="login_form" name="login_form" action="JavaScript:TryLogin();">
+            <a class="c_loby_txt0" style="position: absolute; top: 46px; left: 41px; width: 90px;">Имя игрока:</a>
+            <input type="text" class="input_style0" style="position: absolute; top: 46px; left: 142px; height: 17px; width: 174px; text-align: center;" id="name" name="name" value=""/>
+            <a class="c_loby_txt0" style="position: absolute; top: 82px; left: 41px; width: 90px;">Пароль:</a>
+            <input type="password" class="input_style0" style="position: absolute; top: 82px; left: 142px; height: 17px; width: 174px; text-align: center;" id="pass" name="pass" value=""/>
+            <input type="SUBMIT" value="Submit" style="visibility: hidden;" onclick="">
+          </form>
+          <a class="c_loby_txt0" style="position: absolute; top: 110px; left: 110px; width: 360px; font-weight: bold; color: #ffee00; font-size: 70%; cursor: pointer;" onclick="ShowRestoreForm()">
+            <center>Забыли пароль?</center>
+          </a>
+          <div id="btn_join" style="cursor: pointer;" onclick="g('login_form').submit();">
+            <img id="join_btn" src="/batla.ru/test/i/button_dark_139_40.png" style="position: absolute; left: 19px; top: 136px;">
+            <a class="c_loby_txt0" style="position: absolute; top: 146px; left: 19px; width: 139px; font-weight: bold; color: #ffee00; font-size: 14px;">
+              <center>Войти</center>
+            </a>
+          </div>
+          <div id="btn_reg" style="cursor: pointer;" onclick="g('login_form').submit();">
+            <img id="reg_btn" src="/batla.ru/test/i/button_dark_179_40.png" style="position: absolute; left: 169px; top: 136px;">
+            <a class="c_loby_txt0" style="position: absolute; top: 146px; left: 169px; width: 179px; font-weight: bold; color: #ffee00; font-size: 14px;">
+              <center>Зарегистрироваться</center>
+            </a>
+          </div>
+        </div>
+
+        <!-- Additional content here -->
+        
+      </td>
+      <td width="50%" class="index_main_table_right_gg"></td>
+    </tr>
+  </table>
 </body>
 </html>
