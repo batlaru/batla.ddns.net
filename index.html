@@ -4,59 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Batla</title>
-   <style>
+    <style>
         body {
             margin: 0;
             overflow: hidden; /* Убираем полосы прокрутки */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #0d1528; /* Цвет фона */
-        }
-        #logo {
-            width: 100px; /* Ширина логотипа */
-            position: absolute;
-            transition: transform 0.1s ease; /* Плавный переход перемещения */
-        }
-        
-    </style>
-</head>
-<body>
-
-    <img id="logo" src="logo.png" alt="Логотип"> <!-- Замените на URL вашего логотипа -->
-
-    <script>
-        const logo = document.getElementById('logo');
-
-        document.addEventListener('mousemove', (event) => {
-            const mouseX = event.clientX; // Получаем координату X мыши
-            const halfScreenWidth = window.innerWidth / 2;
-
-            // Расчет новых позиций для логотипа
-            const logoX = (mouseX - halfScreenWidth) / 15; // Регулируйте делитель для настройки чувствительности
-            logo.style.transform = `translateX(${logoX}px)`;
-
-            // Опционально: перемещение целевого изображения (при необходимости измените)
-            const targetImageX = (mouseX - halfScreenWidth) / 16; // Регулируйте делитель для настройки чувствительности
-            targetImage.style.transform = `translateX(${targetImageX}px)`;
-        });
-    </script>
-</body> {
-            background-color: rgb(15, 74, 12); /* ваш цвет фона */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
-            margin: 0;
+            background-color: #0d1528; /* Цвет фона */
             font-family: Arial, sans-serif;
-            position: relative; /* Добавлено для относительного позиционирования */
+            position: relative; /* Для относительного позиционирования */
+        }
+        
+        #logo {
+            width: 100px; /* Ширина логотипа */
+            position: absolute;
+            top: 50px; /* Чтобы логотип не был слишком высоко */
+            transition: transform 0.1s ease; /* Плавный переход перемещения */
         }
 
         .icon {
             width: 400px; /* Установите размер в зависимости от ваших нужд */
-            margin-bottom: 120px; /* Отступ между значком и кнопкой */
+            margin-bottom: 30px; /* Отступ между значком и кнопкой */
         }
 
         .play-button {
@@ -103,7 +74,9 @@
     </style>
 </head>
 <body>
-    <img src="2.png" alt="Иконка" class="icon"> <!-- Замените на путь к вашему значку -->
+    <img id="logo" src="2.png" alt="Логотип"> <!-- Замените на URL вашего логотипа -->
+    <img src="icon.png" alt="Иконка" class="icon"> <!-- Замените на путь к вашему значку -->
+
     <a href="https://example.com" target="_blank"> <!-- Укажите свою ссылку -->
         <button class="play-button">Играть</button>
     </a>
@@ -116,5 +89,18 @@
             <img src="discord_icon2.png" alt="Discord"> <!-- Замените на путь к изображению Discord -->
         </a>
     </div>
+
+    <script>
+        const logo = document.getElementById('logo');
+
+        document.addEventListener('mousemove', (event) => {
+            const mouseX = event.clientX; // Получаем координату X мыши
+            const halfScreenWidth = window.innerWidth / 2;
+
+            // Расчет новых позиций для логотипа
+            const logoX = (mouseX - halfScreenWidth) / 15; // Регулируйте делитель для настройки чувствительности
+            logo.style.transform = `translateX(${logoX}px)`;
+        });
+    </script>
 </body>
 </html>
