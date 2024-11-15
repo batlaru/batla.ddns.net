@@ -1,180 +1,516 @@
 <html>
 <head>
-  <script>
-    const observer = new PerformanceObserver((list) => {
-      list.getEntries().forEach((entry) => {
-        console.log('%o', entry);
-      });
-    });
-    observer.observe({type: "navigation", buffered: true});
-  </script>
-  <script src="//archive.org/includes/athena.js" type="text/javascript"></script>
-  <script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app221.us.archive.org';v.server_ms=300;archive_analytics.send_pageview({});});</script>
-  <script type="text/javascript" src="/_static/js/bundle-playback.js?v=krFivnjJ" charset="utf-8"></script>
-  <script type="text/javascript" src="/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
-  <script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden"};</script>
-  <script type="text/javascript" src="/_static/js/ruffle/ruffle.js"></script>
-  <link rel="stylesheet" type="text/css" href="/_static/css/banner-styles.css?v=S1zqJCYt" />
-  <link rel="stylesheet" type="text/css" href="/_static/css/iconochive.css?v=3PDvdIFv" />
+<script type="text/javascript" src="asset/_static/js/bundle-playback.js" charset="utf-8"></script>
+<script type="text/javascript" src="asset/_static/js/wombat.js" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden"};</script>
+<script type="text/javascript" src="asset/_static/js/ruffle.js" defer="true"></script>
+<script type="text/javascript">
+  __wm.init("https://archive/web");
+  __wm.wombat("http://batla.ru:80/","20171216110111","https://archive/","web","/_static/",
+	      "1513422071");
+</script>
+<link rel="stylesheet" type="text/css" href="asset/_static/css/banner-styles.css" />
+<link rel="stylesheet" type="text/css" href="asset/_static/css/iconochive.css" />
+<!-- End Wayback Rewrite JS Include -->
+
+	<meta http-equiv="Content-Language" content="ru">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="asset/web/20171216110111cs_/http://batla.ru/test/css/style.css">
+	
+<script>
+
+var ad_id = '';
+
+function g(x)
+{
+	if(document.layers)
+	{
+		return document.layers[x];
+	}
+
+	if(document.all && document.all.item)
+	{
+		return document.all[x];
+	}
+
+	if(document.getElementById)
+	{
+		return document.getElementById(x);
+	}
+}
+
+function OnLoadF()
+{
+	$("#direct_login_back_1").animate({top: '274px'}, 700).animate({top: '274px'}, 200);
+	$("#direct_login_back_2").animate({top: '433px'}, 700).animate({top: '423px'}, 200);
+}
+
+function ShowGameFBAnim()
+{
+	$("#direct_login_back_1").animate({top: '274px'}, 200).animate({top: '-400px'}, 700);
+	$("#direct_login_back_2").animate({top: '433px'}, 200).animate({top: '200px'}, 700, ShowGameFB);
+}
+
+function ShowGameVKAnim()
+{
+	$("#direct_login_back_1").animate({top: '274px'}, 200).animate({top: '-400px'}, 700);
+	$("#direct_login_back_2").animate({top: '433px'}, 200).animate({top: '-200px'}, 700, ShowGameVK);
+}
+
+</script>
+
+
+<script type="text/javascript">
+ 
+var fb_id = "";
+var fb_at = "";
+var fb_name = "";
+var fb_picture = "";
+function CheckLogin(auto_connect)
+{
+	FB.getLoginStatus(function(response)
+	{
+	  if (response.status === 'connected')
+	  {
+	    fb_id = response.authResponse.userID;
+	    fb_at = response.authResponse.accessToken;
+		  OnLogin(auto_connect);
+		false &&
+		FB.api('/me/permissions', function (response) {
+		    if(response["data"][0]["publish_stream"] == "1")
+		    {
+			OnLogin(auto_connect);
+		    }
+		  else
+		  {
+			OnLoginFailed();
+		  }
+		});
+	  }
+	  else if (response.status === 'not_authorized')
+	  {
+		OnLoginFailed();
+	  }
+	  else
+	  {
+	    OnLoginFailed();
+	  }
+	 });
+}
+
+function OnLogin(auto_connect)
+{
+	FB.api("/me?fields=picture,name", function(response) {
+		fb_name = response.name;
+		fb_picture = response.picture;
+		if(auto_connect == 1)
+		{
+			ShowGameFBAnim();
+		}
+	});
+}
+
+function ShowGameFB()
+{
+	window.location = "//archive/web/20171216110111/http://batla.ru/test/index.php?platform=direct&login_type=fb&fb_id="+encodeURIComponent(fb_id)+"&fb_at="+encodeURIComponent(fb_at)+"&social_name="+encodeURIComponent(fb_name)+"&social_icon="+encodeURIComponent(fb_picture)+"&ad_id="+encodeURIComponent(ad_id);
+	ShowGame();
+}
+
+function OnLoginFailed()
+{
+}
+
+function LoginFB()
+{
+	if(fb_id != 0 && fb_name != "")
+	{
+		ShowGameFBAnim();
+		return;
+	}
+	 FB.login(function(response) {
+	   if (response.authResponse) {
+			CheckLogin(1);
+	   } else {
+	   }
+	 }, {scope: 'user_friends'});
+}
   
-  <meta http-equiv="Content-Language" content="ru">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <script type="text/javascript" src="//code.jquery.com/jquery-1.6.1.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="http://batla.ru/test/css/style.css">
-  
-  <script>
-    var ad_id = '';
-    function g(x) {
-      return document.getElementById(x);
-    }
-    function OnLoadF() {
-      $("#direct_login_back_1").animate({top: '274px'}, 700).animate({top: '274px'}, 200);
-      $("#direct_login_back_2").animate({top: '433px'}, 700).animate({top: '423px'}, 200);
-    }
-    function ShowGameFBAnim() {
-      $("#direct_login_back_1").animate({top: '274px'}, 200).animate({top: '-400px'}, 700);
-      $("#direct_login_back_2").animate({top: '433px'}, 200).animate({top: '200px'}, 700, ShowGameFB);
-    }
-    function ShowGameVKAnim() {
-      $("#direct_login_back_1").animate({top: '274px'}, 200).animate({top: '-400px'}, 700);
-      $("#direct_login_back_2").animate({top: '433px'}, 200).animate({top: '-200px'}, 700, ShowGameVK);
-    }
-  </script>
-  
-  <script type="text/javascript">
-    var fb_id = "";
-    var fb_at = "";
-    var fb_name = "";
-    var fb_picture = "";
-    function CheckLogin(auto_connect) {
-      FB.getLoginStatus(function(response) {
-        if (response.status === 'connected') {
-          fb_id = response.authResponse.userID;
-          fb_at = response.authResponse.accessToken;
-          OnLogin(auto_connect);
-        } else {
-          OnLoginFailed();
-        }
-      });
-    }
-    function OnLogin(auto_connect) {
-      FB.api("/me?fields=picture,name", function(response) {
-        fb_name = response.name;
-        fb_picture = response.picture;
-        if (auto_connect == 1) {
-          ShowGameFBAnim();
-        }
-      });
-    }
-    function ShowGameFB() {
-      window.location = "/test/index.php?platform=direct&login_type=fb&fb_id=" + encodeURIComponent(fb_id) + "&fb_at=" + encodeURIComponent(fb_at) + "&social_name=" + encodeURIComponent(fb_name) + "&social_icon=" + encodeURIComponent(fb_picture) + "&ad_id=" + encodeURIComponent(ad_id);
-      ShowGame();
-    }
-    function OnLoginFailed() {
-      // Handle login failure
-    }
-    function LoginFB() {
-      if (fb_id != 0 && fb_name != "") {
-        ShowGameFBAnim();
-        return;
-      }
-      FB.login(function(response) {
-        if (response.authResponse) {
-          CheckLogin(1);
-        }
-      }, {scope: 'user_friends'});
-    }
-  </script>
+</script>
+	
 </head>
 <body onload="OnLoadF();">
-  <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0" align="center" style="background-color: #0d1528;">
-    <tr>
-      <td width="50%" class="index_main_table_left_gg"></td>
-      <td width="900" valign="top">
-        <div id="fb-root"></div>
-        <script>
-          (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=643676185684273";
-            fjs.parentNode.insertBefore(js, fjs);
-          }(document, 'script', 'facebook-jssdk'));
-        </script>
-        
-        <div id="vk_api_transport"></div>
-        <script type="text/javascript">
-          var vk_id = "";
-          var vk_name = "";
-          var vk_picture = "";
-          var vk_auto_login = 0;
 
-          window.vkAsyncInit = function() {
-            VK.init({apiId: 3032868});
-          };
+<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0" align="center" style="background-color: #0d1528;">
+<tr>
+<td width="50%" class="index_main_table_left_gg">
+</td>
 
-          setTimeout(function() {
-            var el = document.createElement("script");
-            el.type = "text/javascript";
-            el.src = "//vkontakte.ru/js/api/openapi.js";
-            el.async = true;
-            document.getElementById("vk_api_transport").appendChild(el);
-          }, 0);
-        </script>
+<td width="900" valign="top">
+	<table width="900" height="793" border="0" cellpadding="0" cellspacing="0" class="index_main_table_gg" align="center">
+	<tr>
+	<td align="center" valign="top">
 
-        <div id="direct_login_back_1" style="position: absolute; left: 50%; top: -400px; display: hidden; margin: 0 0 0 -184px;">
-          <img src="direct_login_back_1.png" alt="Direct Login Background 1" style="position: absolute; left: 0px; top: 0px;">
-          <a class="c_loby_txt0" style="position: absolute; top: 10px; left: 0px; width: 360px; font-weight: bold; color: #ffee00;">
-            <center>Вход через соц. сеть:</center>
-          </a>
-          <div id="btn_fb" style="cursor: pointer;" onclick="LoginFB();">
-            <img id="fb_btn" src="button_dark_139_40.png" alt="Login with Facebook" style="position: absolute; left: 36px; top: 71px;">
-            <a class="c_loby_txt0" style="position: absolute; top: 76px; left: 74px; width: 98px; font-weight: bold; color: #ffee00; font-size: 11px;">
-              <center>Войти<br>Facebook</center>
-            </a>
-          </div>
-          <div id="btn_vk" style="cursor: pointer;" onclick="LoginVK();">
-            <img id="vk_btn" src="button_dark_139_40.png" alt="Login with VK" style="position: absolute; left: 206px; top: 71px;">
-            <a class="c_loby_txt0" style="position: absolute; top: 76px; left: 244px; width: 98px; font-weight: bold; color: #ffee00; font-size: 11px;">
-              <center>Войти<br>ВКонтакте</center>
-            </a>
-          </div>
-        </div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "http://connect.facebook.net/en_US/all.js#xfbml=1&appId=643676185684273";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
-        <div id="direct_login_back_2" style="position: absolute; left: 50%; top: -200px; display: hidden; margin: 0 0 0 -184px;">
-          <img src="direct_login_back_2.png" alt="Direct Login Background 2" style="position: absolute; left: 0px; top: 0px;">
-          <a class="c_loby_txt0" style="position: absolute; top: 10px; left: 0px; width: 360px; font-weight: bold; color: #ffee00;">
-            <center>Вход в игру:</center>
-          </a>
-          <form id="login_form" name="login_form" action="JavaScript:TryLogin();">
-            <a class="c_loby_txt0" style="position: absolute; top: 46px; left: 41px; width: 90px;">Имя игрока:</a>
-            <input type="text" class="input_style0" style="position: absolute; top: 46px; left: 142px; height: 17px; width: 174px; text-align: center;" id="name" name="name" value=""/>
-            <a class="c_loby_txt0" style="position: absolute; top: 82px; left: 41px; width: 90px;">Пароль:</a>
-            <input type="password" class="input_style0" style="position: absolute; top: 82px; left: 142px; height: 17px; width: 174px; text-align: center;" id="pass" name="pass" value=""/>
-            <input type="submit" value="Submit" style="visibility: hidden;" onclick="">
-          </form>
-          <a class="c_loby_txt0" style="position: absolute; top: 110px; left: 110px; width: 360px; font-weight: bold; color: #ffee00; font-size: 70%; cursor: pointer;" onclick="ShowRestoreForm()">
-            <center>Забыли пароль?</center>
-          </a>
-          <div id="btn_join" style="cursor: pointer;" onclick="g('login_form').submit();">
-            <img id="join_btn" src="button_dark_139_40.png" alt="Join Button" style="position: absolute; left: 19px; top: 136px;">
-            <a class="c_loby_txt0" style="position: absolute; top: 146px; left: 19px; width: 139px; font-weight: bold; color: #ffee00; font-size: 14px;">
-              <center>Войти</center>
-            </a>
-          </div>
-          <div id="btn_reg" style="cursor: pointer;" onclick="g('login_form').submit();">
-            <img id="reg_btn" src="button_dark_179_40.png" alt="Register Button" style="position: absolute; left: 169px; top: 136px;">
-            <a class="c_loby_txt0" style="position: absolute; top: 146px; left: 169px; width: 179px; font-weight: bold; color: #ffee00; font-size: 14px;">
-              <center>Зарегистрироваться</center>
-            </a>
-          </div>
-        </div>
 
-        <!-- Additional content here -->
-        
-      </td>
-      <td width="50%" class="index_main_table_right_gg"></td>
-    </tr>
-  </table>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '643676185684273', // App ID
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      xfbml      : true,  // parse XFBML
+      oauth      : true
+    });
+
+    // Additional initialization code here
+    CheckLogin(0);
+  };
+
+  // Load the SDK Asynchronously
+  (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "http://connect.facebook.net/en_US/all.js";
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+</script>
+
+<div id="vk_api_transport"></div>
+<script type="text/javascript">
+
+var vk_id = "";
+var vk_at = "";
+var vk_name = "";
+var vk_picture = "";
+var vk_auto_login = 0;
+
+  window.vkAsyncInit = function() {
+    VK.init({ apiId: 3032868 });
+  };
+
+  setTimeout(function() {
+    var el = document.createElement("script");
+    el.type = "text/javascript";
+    el.src = "http://vkontakte.ru/js/api/openapi.js";
+    el.async = true;
+    document.getElementById("vk_api_transport").appendChild(el);
+  }, 0);
+  
+	function authInfo(response) {
+	  if (response.session) {
+		vk_id = response.session.mid;
+		VK.Api.call('users.get', {uids: ""+response.session.mid, fields: "first_name,last_name,photo"}, function(r) {
+		  if(r.response) {
+			vk_name = r.response[0].first_name + " " + r.response[0].last_name;
+			vk_picture = r.response[0].photo;
+			
+			if(vk_auto_login == 1)
+			{
+				ShowGameVKAnim();
+			}
+		  }
+		});
+	  } else {
+	  }
+	}
+	
+function LoginVK()
+{
+	if(vk_id != 0 && vk_name != "")
+	{
+		ShowGameVKAnim();
+		return;
+	}
+	
+	vk_auto_login = 1;
+	VK.Auth.login(authInfo);
+}
+
+function ShowGameVK()
+{
+	window.location = "//archive/web/20171216110111/http://batla.ru/test/index.php?platform=direct&login_type=vk&vk_id="+encodeURIComponent(vk_id)+"&social_name="+encodeURIComponent(vk_name)+"&social_icon="+encodeURIComponent(vk_picture)+"&ad_id="+encodeURIComponent(ad_id);
+	ShowGame();
+}
+
+function ShowGame()
+{
+}
+
+var u_name;
+var u_pass;
+
+function TryLogin()
+{
+	u_name = g('name').value;
+	u_pass = g('pass').value;
+	
+	if(u_name == "")
+	{
+		alert("Имя не должно быть пустым!");
+	}
+	else if(u_pass == "")
+	{
+		alert("Пароль не должен быть пустым!");
+	}
+	else
+	{
+		$.post("test/reg_new_user.php", { platform: "direct", login_type: "direct", u_name: u_name, u_pass: u_pass, ref_id: "0", ad_id: ad_id}, TryLoginResult);
+	}
+}
+
+function TrySendRestoreRequest() {
+    if (TrySendRestoreRequest.sent) {
+        return false;
+    }
+    var name_r = g('name_r').value;
+    var email_r = g('email_r').value;
+
+    if(name_r == "")
+    {
+        alert("Имя не должно быть пустым!");
+    }
+    else if(email_r == "")
+    {
+        alert("E-Mail не должен быть пустым!");
+    }
+    else
+    {
+        $.post("email_ac.php", { restore_request: 1, name: name_r, email: email_r}, EmailAcResult);
+        TrySendRestoreRequest.sent = true;
+    }
+}
+TrySendRestoreRequest.sent = false;
+
+function TryChangePassword() {
+    var u_pass = g('pass').value;
+    var u_pass2 = g('pass2').value;
+    var restore_password = g('restore_password').value;
+
+    if(u_pass == "" || u_pass2 == "")
+    {
+        alert("Пароль не должен быть пустым!");
+    }
+    else if(u_pass != u_pass2)
+    {
+        alert("Пароли должны совпадать!");
+    }
+    else
+    {
+        $.post("email_ac.php", { restore_password: restore_password, password: u_pass}, EmailAcResult);
+    }
+}
+
+function EmailAcResult(res) {
+    if (res[0] == '#') {
+        var msg = res.substr(1);
+        alert(msg);
+
+        if (msg == "Пароль успешно изменен!" || msg == "Запрос успешно отправлен!" ) {
+            window.location = "/";
+        }
+    } else {
+        alert("Что-то не так!");
+    }
+
+    TrySendRestoreRequest.sent = false;
+}
+
+function GoToGame()
+{
+	window.location = "//archive/web/20171216110111/http://batla.ru/test/index.php?platform=direct&login_type=direct&social_name="+encodeURIComponent(u_name)+"&social_pass="+encodeURIComponent(u_pass)+"&ad_id="+encodeURIComponent(ad_id);
+}
+
+function TryLoginResult(res)
+{
+	var arr = res.split('|');
+	if(arr[0] == "ok")
+	{
+		if(ad_id == 3)
+		{
+			g('reg_result_ad_id3').innerHTML = "<img src=\"//pix.gameguru.ru/m/226omplete.gif\" height=\"1\" width=\"1\" />";
+			setTimeout("GoToGame();", 200);
+		}
+		else
+		{
+			GoToGame();
+		}
+	}
+	else if(arr[0] == "error_empty_name")
+	{
+		alert("Имя не должно быть пустым!");
+	}
+	else if(arr[0] == "error_empty_pass")
+	{
+		alert("Пароль не должен быть пустым!");
+	}
+    else if(arr[0] == "error_wrong_pass")
+    {
+        alert("Пароль не верный!");
+    }
+    else if(arr[0] == "error_wrong_name_badwords")
+    {
+        alert("Запрещено использовать нецензурную лексику!");
+    }
+	else
+	{
+		alert("Неправильное имя пользователя или пароль!");
+	}
+}
+
+function ShowRestoreForm() {
+    jQuery("#direct_login_back_2").hide();
+    jQuery("#restore_pass_back").show();
+}
+
+function HideRestoreForm() {
+    jQuery("#restore_pass_back").hide();
+    jQuery("#direct_login_back_2").show();
+}
+
+</script>
+<div id="direct_login_back_1" style="position: absolute; left: 50%; top: -400px; display: hidden; margin: 0 0 0 -184px;">
+	<img src="direct_login_back_1.png" style="position: absolute; left: 0px; top: 0px;">
+	
+	<a class="c_loby_txt0" style="position: absolute; top: 10px; left: 0px; width: 360px; font-weight: bold; color: #ffee00;" href="https://archive/"><center>Вход через соц. сеть:</center></a>
+	
+	<div id="btn_fb" style="cursor: pointer;" onmouseover="g('fb_btn').src='button_dark_139_40_s.png';" onmouseout="g('fb_btn').src='button_dark_139_40.png';" onclick="LoginFB();">
+		<img id="fb_btn" src="button_dark_139_40.png" style="position: absolute; left: 36px; top: 71px;">
+		<img src="fb2.png" style="position: absolute; left: 24px; top: 64px;">
+		
+		<a class="c_loby_txt0" style="position: absolute; top: 76px; left: 74px; width: 98px; font-weight: bold; color: #ffee00; font-size: 11px;" href="https://archive/"><center>Войти<br>Facebook</center></a>
+	</div>
+	
+	<div id="btn_vk" style="cursor: pointer;" onmouseover="g('vk_btn').src='button_dark_139_40_s.png';" onmouseout="g('vk_btn').src='button_dark_139_40.png';" onclick="LoginVK();">
+		<img id="vk_btn" src="button_dark_139_40.png" style="position: absolute; left: 206px; top: 71px;">
+		<img src="vk2.png" style="position: absolute; left: 194px; top: 64px;">
+		
+		<a class="c_loby_txt0" style="position: absolute; top: 76px; left: 244px; width: 98px; font-weight: bold; color: #ffee00; font-size: 11px;" href="https://archive/"><center>Войти<br>ВКонтакте</center></a>
+	</div>
+
+</div>
+
+<div id="direct_login_back_2" style="position: absolute; left: 50%; top: -200px; display: hidden; margin: 0 0 0 -184px;">
+	<img src="direct_login_back_2.png" style="position: absolute; left: 0px; top: 0px;">
+	<a class="c_loby_txt0" style="position: absolute; top: 10px; left: 0px; width: 360px; font-weight: bold; color: #ffee00;" href="https://archive/"><center>Вход в игру:</center></a>
+	
+	<form id="login_form" name="login_form" action="https://archive/JavaScript:TryLogin();">
+		<a class="c_loby_txt0" style="position: absolute; top: 46px; left: 41px; width: 90px;" href="">Имя игрока:</a>
+		<input type="text" class="input_style0" style="position: absolute; top: 46px; left: 142px; height: 17px; width: 174px; text-align: center;" id="name" name="name" value=""/>
+		
+		<a class="c_loby_txt0" style="position: absolute; top: 82px; left: 41px; width: 90px;" href=">Пароль:</a>
+		<input type="password" class="input_style0" style="position: absolute; top: 82px; left: 142px; height: 17px; width: 174px; text-align: center;" id="pass" name="pass" value=""/>
+		<input type="SUBMIT" value="Submit" style="visibility: hidden;" onclick="">
+	</form>
+
+    <a class="c_loby_txt0" style="position: absolute; top: 110px; left: 110px; width: 360px; font-weight: bold; color: #ffee00; font-size: 70%; cursor: pointer; " onclick="ShowRestoreForm()" href="https://archive/"><center>Забыли пароль?</center></a>
+	
+	<div id="btn_join" style="cursor: pointer;" onmouseover="g('join_btn').src='button_dark_139_40_s.png';" onmouseout="g('join_btn').src='button_dark_139_40.png';" onclick="g('login_form').submit();">
+		<img id="join_btn" src="button_dark_139_40.png" style="position: absolute; left: 19px; top: 136px;">
+		<a class="c_loby_txt0" style="position: absolute; top: 146px; left: 19px; width: 139px; font-weight: bold; color: #ffee00; font-size: 14px;" href="https://archive/"><center>Войти</center></a>
+	</div>
+	
+	<div id="btn_reg" style="cursor: pointer;" onmouseover="g('reg_btn').src='button_dark_179_40_s.png';" onmouseout="g('reg_btn').src='button_dark_179_40.png';" onclick="g('login_form').submit();">
+		<img id="reg_btn" src="button_dark_179_40.png" style="position: absolute; left: 169px; top: 136px;">
+		<a class="c_loby_txt0" style="position: absolute; top: 146px; left: 169px; width: 179px; font-weight: bold; color: #ffee00; font-size: 14px;" href="https://archive/"><center>Зарегистрироваться</center></a>
+	</div>
+</div>
+
+<div id="restore_pass_back" style="position: absolute; left: 50%; top: 423px; display: none; margin: 0 0 0 -184px;">
+    <img src="direct_login_back_2.png" style="position: absolute; left: 0px; top: 0px;">
+    <a class="c_loby_txt0" style="position: absolute; top: 10px; left: 0px; width: 360px; font-weight: bold; color: #ffee00;" href="https://archive/"><center>Восстановить пароль:</center></a>
+
+    <form id="restore_form" name="restore_form" action="https://archive/JavaScript:TrySendRestoreRequest();">
+        <a class="c_loby_txt0" style="position: absolute; top: 46px; left: 41px; width: 90px;" href="https://archive/">Имя игрока:</a>
+        <input type="text" class="input_style0" style="position: absolute; top: 46px; left: 142px; height: 17px; width: 174px; text-align: center;" id="name_r" name="name_r" value=""/>
+
+        <a class="c_loby_txt0" style="position: absolute; top: 82px; left: 41px; width: 90px;" href="https://archive/">E-Mail:</a>
+        <input type="email" class="input_style0" style="position: absolute; top: 82px; left: 142px; height: 17px; width: 174px; text-align: center;" id="email_r" name="email_r" value=""/>
+        <input type="SUBMIT" value="Submit" style="visibility: hidden;" onclick="">
+    </form>
+
+    <div id="btn_join" style="cursor: pointer;" onmouseover="g('join_btn').src='button_dark_139_40_s.png';" onmouseout="g('join_btn').src='button_dark_139_40.png';" onclick="HideRestoreForm();">
+        <img id="join_btn" src="button_dark_139_40.png" style="position: absolute; left: 19px; top: 136px;">
+        <a class="c_loby_txt0" style="position: absolute; top: 146px; left: 19px; width: 139px; font-weight: bold; color: #ffee00; font-size: 14px;" href="https://archive/"><center>Назад</center></a>
+    </div>
+
+    <div id="btn_reg" style="cursor: pointer;" onmouseover="g('reg_btn').src='button_dark_179_40_s.png';" onmouseout="g('reg_btn').src='button_dark_179_40.png';" onclick="g('restore_form').submit();">
+        <img id="reg_btn" src="button_dark_179_40.png" style="position: absolute; left: 169px; top: 136px;">
+        <a class="c_loby_txt0" style="position: absolute; top: 146px; left: 169px; width: 179px; font-weight: bold; color: #ffee00; font-size: 14px;" href="https://archive/"><center>Отправить запрос</center></a>
+    </div>
+</div>
+
+<div id="reg_result_ad_id3">
+</div>
+
+		<center><img src="2.png" style="position: absolute; left: 50%; top: 32px; display: hidden; margin: 0 0 0 -250px;"></center>
+
+		<div style="position: absolute; left: 50%; top: 600px; display: hidden; margin: 0 0 0 -375px;">
+		
+		<br><br><table align="center" cellpadding="2" cellspacing="0" border="0" width="750"><tr>
+		<td align="right" width="250"> <div id="vk_like"></div><script type="text/javascript">VK.Widgets.Like("vk_like", {type: "mini", pageUrl: "https://archive/http://batla.ru/"});</script> </td>
+		<td align="center" width="250"><a target="_blank" class="mrc__plugin_uber_like_button" href="https://archive/http://connect.mail.ru/share" data-mrc-config="{'cm' : '1', 'ck' : '1', 'sz' : '20', 'st' : '2', 'tp' : 'combo'}">Нравится</a>
+<script src="http://cdn.connect.mail.ru/js/loader.js" type="text/javascript" charset="UTF-8"></script></td>
+		<td align="left" width="250"> <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fbatla.ru&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=192063624255426" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:20px;" allowtransparency="true"></iframe> </td>
+		</tr></table>
+		
+<br><center><a href="https://archive/https://twitter.com/share" class="twitter-share-button" data-via="BatlaRu" data-lang="ru">Твитнуть</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<a href="https://archive/https://twitter.com/BatlaRu" class="twitter-follow-button" data-show-count="false" data-lang="ru">Читать @BatlaRu</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</center>
+		
+		<br><br><table align="center" cellpadding="2" cellspacing="0" border="0"><tr>
+		<td align="left" valign="bottom"><a href="http://unity3d.com/" target="_blank"><img src="/web/20171216110111im_/http://batla.ru/i/logo_unity.gif" border="0" width="88" height="31" title="Unity3D" alt="Unity3D"></a></td>
+		<td><a href="https://archive/http://www.exitgames.com/" target="_blank"><img src="logo_photon.gif" border="0" width="88" height="31" title="Photon Network Engine" alt="Photon Network Engine"></a></td>
+		
+		<td align="right" valign="bottom">
+		<!--Rating@Mail.ru counter-->
+		<script language="javascript"><!--
+		d=document;var a='';a+=';r='+escape(d.referrer);js=10;//--></script>
+		<script language="javascript1.1"><!--
+		a+=';j='+navigator.javaEnabled();js=11;//--></script>
+		<script language="javascript1.2"><!--
+		s=screen;a+=';s='+s.width+'*'+s.height;
+		a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth);js=12;//--></script>
+		<script language="javascript1.3"><!--
+		js=13;//--></script><script language="javascript" type="text/javascript"><!--
+		d.write('<a href="https://archive/http://top.mail.ru/jump?from=2159605" target="_top">'+
+		'<img src="http://d3.cf.b0.a2.top.mail.ru/counter?id=2159605;t=213;js='+js+
+		a+';rand='+Math.random()+'" alt="Рейтинг@Mail.ru" border="0" '+
+		'height="31" width="88"><\/a>');if(11<js)d.write('<'+'!-- ');//--></script>
+		<noscript><a target="_top" href="https://archive/http://top.mail.ru/jump?from=2159605">
+		<img src="http://d3.cf.b0.a2.top.mail.ru/counter?js=na;id=2159605;t=213" height="31" width="88" border="0" alt="Рейтинг@Mail.ru"></a></noscript>
+		<script language="javascript" type="text/javascript"><!--
+		if(11<js)d.write('--'+'>');//--></script>
+		<!--// Rating@Mail.ru counter-->
+		</td>
+		
+		<td align="right" valign="bottom">
+		<a href="https://archive/http://www.gamedev.ru/top/"><img src="http://top.gamedev.ru/img/?id=219" width="88" height="31" style="border: 0;" alt="Топ Разработка игр"/></a>
+		</td>
+		</tr></table>
+		
+		</div>
+		
+	</td>
+	</tr>
+	</table>
+</td>
+		
+<td width="50%" class="index_main_table_right_gg">
+</td>
+</tr>
+</table>
+<!-- G:0.0660450 379799 -->
 </body>
 </html>
