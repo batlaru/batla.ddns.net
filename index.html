@@ -20,20 +20,12 @@
   <meta http-equiv="Content-Language" content="ru">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <script type="text/javascript" src="//code.jquery.com/jquery-1.6.1.min.js"></script>
-  <link rel="STYLESHEET" type="text/css" href="http://batla.ru/test/css/style.css">
+  <link rel="stylesheet" type="text/css" href="http://batla.ru/test/css/style.css">
   
   <script>
     var ad_id = '';
     function g(x) {
-      if (document.layers) {
-        return document.layers[x];
-      }
-      if (document.all && document.all.item) {
-        return document.all[x];
-      }
-      if (document.getElementById) {
-        return document.getElementById(x);
-      }
+      return document.getElementById(x);
     }
     function OnLoadF() {
       $("#direct_login_back_1").animate({top: '274px'}, 700).animate({top: '274px'}, 200);
@@ -131,18 +123,18 @@
         </script>
 
         <div id="direct_login_back_1" style="position: absolute; left: 50%; top: -400px; display: hidden; margin: 0 0 0 -184px;">
-          <img src="/direct_login_back_1.png" style="position: absolute; left: 0px; top: 0px;">
+          <img src="direct_login_back_1.png" alt="Direct Login Background 1" style="position: absolute; left: 0px; top: 0px;">
           <a class="c_loby_txt0" style="position: absolute; top: 10px; left: 0px; width: 360px; font-weight: bold; color: #ffee00;">
             <center>Вход через соц. сеть:</center>
           </a>
           <div id="btn_fb" style="cursor: pointer;" onclick="LoginFB();">
-            <img id="fb_btn" src="/button_dark_139_40.png" style="position: absolute; left: 36px; top: 71px;">
+            <img id="fb_btn" src="button_dark_139_40.png" alt="Login with Facebook" style="position: absolute; left: 36px; top: 71px;">
             <a class="c_loby_txt0" style="position: absolute; top: 76px; left: 74px; width: 98px; font-weight: bold; color: #ffee00; font-size: 11px;">
               <center>Войти<br>Facebook</center>
             </a>
           </div>
           <div id="btn_vk" style="cursor: pointer;" onclick="LoginVK();">
-            <img id="vk_btn" src="/button_dark_139_40.png" style="position: absolute; left: 206px; top: 71px;">
+            <img id="vk_btn" src="button_dark_139_40.png" alt="Login with VK" style="position: absolute; left: 206px; top: 71px;">
             <a class="c_loby_txt0" style="position: absolute; top: 76px; left: 244px; width: 98px; font-weight: bold; color: #ffee00; font-size: 11px;">
               <center>Войти<br>ВКонтакте</center>
             </a>
@@ -150,7 +142,7 @@
         </div>
 
         <div id="direct_login_back_2" style="position: absolute; left: 50%; top: -200px; display: hidden; margin: 0 0 0 -184px;">
-          <img src="/direct_login_back_2.png" style="position: absolute; left: 0px; top: 0px;">
+          <img src="direct_login_back_2.png" alt="Direct Login Background 2" style="position: absolute; left: 0px; top: 0px;">
           <a class="c_loby_txt0" style="position: absolute; top: 10px; left: 0px; width: 360px; font-weight: bold; color: #ffee00;">
             <center>Вход в игру:</center>
           </a>
@@ -159,19 +151,19 @@
             <input type="text" class="input_style0" style="position: absolute; top: 46px; left: 142px; height: 17px; width: 174px; text-align: center;" id="name" name="name" value=""/>
             <a class="c_loby_txt0" style="position: absolute; top: 82px; left: 41px; width: 90px;">Пароль:</a>
             <input type="password" class="input_style0" style="position: absolute; top: 82px; left: 142px; height: 17px; width: 174px; text-align: center;" id="pass" name="pass" value=""/>
-            <input type="SUBMIT" value="Submit" style="visibility: hidden;" onclick="">
+            <input type="submit" value="Submit" style="visibility: hidden;" onclick="">
           </form>
           <a class="c_loby_txt0" style="position: absolute; top: 110px; left: 110px; width: 360px; font-weight: bold; color: #ffee00; font-size: 70%; cursor: pointer;" onclick="ShowRestoreForm()">
             <center>Забыли пароль?</center>
           </a>
           <div id="btn_join" style="cursor: pointer;" onclick="g('login_form').submit();">
-            <img id="join_btn" src="/button_dark_139_40.png" style="position: absolute; left: 19px; top: 136px;">
+            <img id="join_btn" src="button_dark_139_40.png" alt="Join Button" style="position: absolute; left: 19px; top: 136px;">
             <a class="c_loby_txt0" style="position: absolute; top: 146px; left: 19px; width: 139px; font-weight: bold; color: #ffee00; font-size: 14px;">
               <center>Войти</center>
             </a>
           </div>
           <div id="btn_reg" style="cursor: pointer;" onclick="g('login_form').submit();">
-            <img id="reg_btn" src="/button_dark_179_40.png" style="position: absolute; left: 169px; top: 136px;">
+            <img id="reg_btn" src="button_dark_179_40.png" alt="Register Button" style="position: absolute; left: 169px; top: 136px;">
             <a class="c_loby_txt0" style="position: absolute; top: 146px; left: 169px; width: 179px; font-weight: bold; color: #ffee00; font-size: 14px;">
               <center>Зарегистрироваться</center>
             </a>
