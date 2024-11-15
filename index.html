@@ -6,42 +6,41 @@
     <title>Batla</title>
     <style>
         body {
-            background-color: rgb(15, 74, 12); /* or use #0f4a0c */
-            color: white;
+            background-color: rgb(15, 74, 12); /* ваш цвет фона */
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             height: 100vh;
             margin: 0;
+            font-family: Arial, sans-serif;
         }
-        #icon {
-            width: 200px; /* Adjust the size as needed */
-            height: auto; 
-            margin-bottom: 50px;
+
+        .icon {
+            width: 100px; /* установите размер в зависимости от ваших нужд */
+            margin-bottom: 20px; /* отступ между значком и кнопкой */
         }
-        #play-button {
-            background-color: #1e7e2d; /* Dark green for button background */
-            border: none;
-            color: yellow; /* Button text color */
-            padding: 15px 30px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+
+        .play-button {
+            background-color: #0f4a0c; /* цвет фона кнопки */
+            color: yellow; /* цвет текста на кнопке */
+            border: none; /* убираем границы кнопки */
+            border-radius: 10px; /* сглаженные края кнопки */
+            padding: 15px 30px; /* внутренние отступы кнопки */
+            font-size: 18px; /* размер шрифта */
+            cursor: pointer; /* указатель при наведении */
+            transition: background-color 0.3s; /* плавный переход при наведении */
         }
-        #play-button:hover {
-            background-color: #155d22; /* Darker green on hover */
+
+        .play-button:hover {
+            background-color: #0d3a0a; /* цвет фона кнопки при наведении */
         }
     </style>
 </head>
 <body>
-
-    <img id="icon" src="2.png" alt="Icon"> <!-- Replace with your icon URL -->
-    <a id="play-button" href="https://gugol.com" target="_blank">Играть</a> <!-- Replace with your link -->
-
+    <img src="path_to_your_icon.png" alt="Иконка" class="icon"> <!-- Замените на путь к вашему значку -->
+    <a href="https://example.com" target="_blank"> <!-- Укажите свою ссылку -->
+        <button class="play-button">Играть</button>
+    </a>
 </body>
 </html>
