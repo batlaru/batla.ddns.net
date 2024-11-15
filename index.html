@@ -6,46 +6,42 @@
     <title>Batla</title>
     <style>
         body {
-            margin: 0;
-            height: 100vh;
+            background-color: rgb(15, 74, 12); /* or use #0f4a0c */
+            color: white;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-color: rgb(15, 74, 12); /* Цвет фона */
-            color: white; /* Цвет текста */
+            height: 100vh;
+            margin: 0;
         }
-
-        .icon {
-            width: 100px; /* Ширина изображения */
-            height: auto; /* Высота автоматически подбирается */
-            margin-bottom: 20px; /* Отступ между изображением и кнопкой */
+        #icon {
+            width: 100px; /* Adjust the size as needed */
+            height: auto; 
+            margin-bottom: 20px;
         }
-
-        .play-button {
-            background-color: transparent; /* Прозрачный фон */
-            border: 2px solid yellow; /* Желтая рамка */
-            padding: 10px 20px;
-            color: yellow; /* Цвет текста на кнопке */
-            font-size: 18px; /* Размер текста */
-            cursor: pointer; /* Указатель для курсора */
-            text-align: center; /* Центрирование текста */
-            text-decoration: none; /* Убираем подчеркивание */
-            position: relative; /* Для позиционирования */
+        #play-button {
+            background-color: #1e7e2d; /* Dark green for button background */
+            border: none;
+            color: yellow; /* Button text color */
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
-
-        .play-button:hover {
-            background-color: rgba(255, 255, 0, 0.3); /* Подсветка кнопки при наведении */
+        #play-button:hover {
+            background-color: #155d22; /* Darker green on hover */
         }
     </style>
 </head>
 <body>
 
-    <!-- Замените 'your-image.png' на путь к вашему изображению -->
-    <img src="2.png" alt="Icon" class="icon">
-
-    <!-- Ссылка на сайт, куда будет перенаправление -->
-    <a href="https://batla.ru" target="_blank" class="play-button">Играть</a>
+    <img id="icon" src="2.png" alt="Icon"> <!-- Replace with your icon URL -->
+    <a id="play-button" href="https://gugol.com" target="_blank">Играть</a> <!-- Replace with your link -->
 
 </body>
 </html>
