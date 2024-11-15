@@ -1,135 +1,51 @@
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Фон из трех изображений</title>
+    <title>Batla</title>
     <style>
-        body, html {
-            height: 100%;
+        body {
             margin: 0;
+            height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-image: url('main_bg_left_gg.jpg'), url('main_bg_gg.jpg'), url('main_bg_right_gg.jpg');
-            background-size: cover; /* или 'contain' для другого эффекта */
-            background-position: center; /* Центрирует изображения */
-            background-repeat: no-repeat; /* Не повторяет изображения */
-            background-attachment: fixed; /* Фиксирует фон при прокрутке */
-            filter: brightness(0.8); /* Уменьшает яркость фона для лучшей читаемости текста (по желанию) */
+            background-color: rgb(15, 74, 12); /* Цвет фона */
+            color: white; /* Цвет текста */
         }
 
-        .content {
-            color: white;
-            text-align: center;
-            z-index: 1; /* Установите уровень наложения, чтобы текст был виден */
+        .icon {
+            width: 100px; /* Ширина изображения */
+            height: auto; /* Высота автоматически подбирается */
+            margin-bottom: 20px; /* Отступ между изображением и кнопкой */
+        }
+
+        .play-button {
+            background-color: transparent; /* Прозрачный фон */
+            border: 2px solid yellow; /* Желтая рамка */
+            padding: 10px 20px;
+            color: yellow; /* Цвет текста на кнопке */
+            font-size: 18px; /* Размер текста */
+            cursor: pointer; /* Указатель для курсора */
+            text-align: center; /* Центрирование текста */
+            text-decoration: none; /* Убираем подчеркивание */
+            position: relative; /* Для позиционирования */
+        }
+
+        .play-button:hover {
+            background-color: rgba(255, 255, 0, 0.3); /* Подсветка кнопки при наведении */
         }
     </style>
 </head>
 <body>
-<script type="text/javascript" src="asset/_static/js/bundle-playback.js" charset="utf-8"></script>
-<script type="text/javascript" src="asset/_static/js/wombat.js" charset="utf-8"></script>
-<script>
-    window.RufflePlayer = window.RufflePlayer || {};
-    window.RufflePlayer.config = {"autoplay": "on", "unmuteOverlay": "hidden"};
 
-    // Инициализация Wombat (измените на нужный URL)
-    __wm.init("archive");
-    __wm.wombat("http://batla.ru:80/", "20171216110111", "https://archive/", "web", "/_static/", "1513422071");
-</script>
+    <!-- Замените 'your-image.png' на путь к вашему изображению -->
+    <img src="2.png" alt="Icon" class="icon">
 
-<body onload="OnLoadF();">
+    <!-- Ссылка на сайт, куда будет перенаправление -->
+    <a href="https://batla.ru" target="_blank" class="play-button">Играть</a>
 
-<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0" align="center" style="background-color: #0d1528;">
-    <tr>
-        <td width="50%" class="index_main_table_left_gg"></td>
-        <td width="900" valign="top">
-            <table width="900" height="793" border="0" cellpadding="0" cellspacing="0" class="index_main_table_gg" align="center">
-                <tr>
-                    <td align="center" valign="top">
-
-                        <div id="fb-root"></div>
-                        <script>(function(d, s, id) {
-                                var js, fjs = d.getElementsByTagName(s)[0];
-                                if (d.getElementById(id)) return;
-                                js = d.createElement(s); js.id = id;
-                                js.src = "https://connect.facebook.net/en_US/all.js#xfbml=1&appId=643676185684273";
-                                fjs.parentNode.insertBefore(js, fjs);
-                            }(document, 'script', 'facebook-jssdk'));</script>
-
-                        <div id="direct_login_back_1" style="position: absolute; left: 50%; top: -400px; display: block; margin: 0 0 0 -184px;">
-                            <img src="direct_login_back_1.png" style="position: absolute; left: 0px; top: 0px;">
-                            <a class="c_loby_txt0" style="position: absolute; top: 10px; left: 0px; width: 360px; font-weight: bold; color: #ffee00;" href=""><center>Вход через соц. сеть:</center></a>
-
-                            <div id="btn_fb" style="cursor: pointer;" onmouseover="g('fb_btn').src='button_dark_139_40_s.png';" onmouseout="g('fb_btn').src='button_dark_139_40.png';" onclick="LoginFB();">
-                                <img id="fb_btn" src="button_dark_139_40.png" style="position: absolute; left: 36px; top: 71px;">
-                                <img src="fb2.png" style="position: absolute; left: 24px; top: 64px;">
-                                <a class="c_loby_txt0" style="position: absolute; top: 76px; left: 74px; width: 98px; font-weight: bold; color: #ffee00; font-size: 11px;" href=""><center>Войти<br>Facebook</center></a>
-                            </div>
-
-                            <div id="btn_vk" style="cursor: pointer;" onmouseover="g('vk_btn').src='button_dark_139_40_s.png';" onmouseout="g('vk_btn').src='button_dark_139_40.png';" onclick="LoginVK();">
-                                <img id="vk_btn" src="button_dark_139_40.png" style="position: absolute; left: 206px; top: 71px;">
-                                <img src="vk2.png" style="position: absolute; left: 194px; top: 64px;">
-                                <a class="c_loby_txt0" style="position: absolute; top: 76px; left: 244px; width: 98px; font-weight: bold; color: #ffee00; font-size: 11px;" href=""><center>Войти<br>ВКонтакте</center></a>
-                            </div>
-                        </div>
-
-                        <div id="direct_login_back_2" style="position: absolute; left: 50%; top: -200px; display: block; margin: 0 0 0 -184px;">
-                            <img src="direct_login_back_2.png" style="position: absolute; left: 0px; top: 0px;">
-                            <a class="c_loby_txt0" style="position: absolute; top: 10px; left: 0px; width: 360px; font-weight: bold; color: #ffee00;" href=""><center>Вход в игру:</center></a>
-
-                            <form id="login_form" name="login_form" action="JavaScript:TryLogin();">
-                                <a class="c_loby_txt0" style="position: absolute; top: 46px; left: 41px; width: 90px;" href="">Имя игрока:</a>
-                                <input type="text" class="input_style0" style="position: absolute; top: 46px; left: 142px; height: 17px; width: 174px; text-align: center;" id="name" name="name" value=""/>
-
-                                <a class="c_loby_txt0" style="position: absolute; top: 82px; left: 41px; width: 90px;" href="">Пароль:</a>
-                                <input type="password" class="input_style0" style="position: absolute; top: 82px; left: 142px; height: 17px; width: 174px; text-align: center;" id="pass" name="pass" value=""/>
-                                <input type="SUBMIT" value="Submit" style="visibility: hidden;" onclick="">
-                            </form>
-
-                            <a class="c_loby_txt0" style="position: absolute; top: 110px; left: 110px; width: 360px; font-weight: bold; color: #ffee00; font-size: 70%; cursor: pointer;" onclick="ShowRestoreForm()" href=""><center>Забыли пароль?</center></a>
-
-                            <div id="btn_join" style="cursor: pointer;" onmouseover="g('join_btn').src='button_dark_139_40_s.png';" onmouseout="g('join_btn').src='button_dark_139_40.png';" onclick="g('login_form').submit();">
-                                <img id="join_btn" src="button_dark_139_40.png" style="position: absolute; left: 19px; top: 136px;">
-                                <a class="c_loby_txt0" style="position: absolute; top: 146px; left: 19px; width: 139px; font-weight: bold; color: #ffee00; font-size: 14px;" href=""><center>Войти</center></a>
-                            </div>
-
-                            <div id="btn_reg" style="cursor: pointer;" onmouseover="g('reg_btn').src='button_dark_179_40_s.png';" onmouseout="g('reg_btn').src='button_dark_179_40.png';" onclick="g('login_form').submit();">
-                                <img id="reg_btn" src="button_dark_179_40.png" style="position: absolute; left: 169px; top: 136px;">
-                                <a class="c_loby_txt0" style="position: absolute; top: 146px; left: 169px; width: 179px; font-weight: bold; color: #ffee00; font-size: 14px;" href=""><center>Зарегистрироваться</center></a>
-                            </div>
-                        </div>
-
-                        <div id="restore_pass_back" style="position: absolute; left: 50%; top: 423px; display: none; margin: 0 0 0 -184px;">
-                            <img src="direct_login_back_2.png" style="position: absolute; left: 0px; top: 0px;">
-                            <a class="c_loby_txt0" style="position: absolute; top: 10px; left: 0px; width: 360px; font-weight: bold; color: #ffee00;" href=""><center>Восстановить пароль:</center></a>
-
-                            <form id="restore_form" name="restore_form" action="JavaScript:TrySendRestoreRequest();">
-                                <a class="c_loby_txt0" style="position: absolute; top: 46px; left: 41px; width: 90px;" href="">Имя игрока:</a>
-                                <input type="text" class="input_style0" style="position: absolute; top: 46px; left: 142px; height: 17px; width: 174px; text-align: center;" id="name_r" name="name_r" value=""/>
-
-                                <a class="c_loby_txt0" style="position: absolute; top: 82px; left: 41px; width: 90px;" href="">E-Mail:</a>
-                                <input type="email" class="input_style0" style="position: absolute; top: 82px; left: 142px; height: 17px; width: 174px; text-align: center;" id="email_r" name="email_r" value=""/>
-                                <input type="SUBMIT" value="Submit" style="visibility: hidden;" onclick="">
-                            </form>
-
-                            <div id="btn_join" style="cursor: pointer;" onmouseover="g('join_btn').src='button_dark_139_40_s.png';" onmouseout="g('join_btn').src='button_dark_139_40.png';" onclick="HideRestoreForm();">
-                                <img id="join_btn" src="button_dark_139_40.png" style="position: absolute; left: 19px; top: 136px;">
-                                <a class="c_loby_txt0" style="position: absolute; top: 146px; left: 19px; width: 139px; font-weight: bold; color: #ffee00; font-size: 14px;" href=""><center>Назад</center></a>
-                            </div>
-
-                            <div id="btn_reg" style="cursor: pointer;" onmouseover="g('reg_btn').src='button_dark_179_40_s.png';" onmouseout="g('reg_btn').src='button_dark_179_40.png';" onclick="g('restore_form').submit();">
-                                <img id="reg_btn" src="button_dark_179_40.png" style="position: absolute; left: 169px; top: 136px;">
-                                <a class="c_loby_txt0" style="position: absolute; top: 146px; left: 169px; width: 179px; font-weight: bold; color: #ffee00; font-size: 14px;" href=""><center>Отправить запрос</center></a>
-                            </div>
-                        </div>
-
-                    </td>
-                </tr>
-            </table>
-        </td>
-        <td width="50%" class="index_main_table_right_gg"></td>
-    </tr>
-</table>
-<!-- G:0.0660450 379799 -->
 </body>
 </html>
