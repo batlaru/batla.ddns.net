@@ -14,28 +14,54 @@
             height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
+            position: relative; /* Добавлено для относительного позиционирования */
         }
 
         .icon {
-            width: 400px; /* установите размер в зависимости от ваших нужд */
-            margin-bottom: 120px; /* отступ между значком и кнопкой */
+            width: 400px; /* Установите размер в зависимости от ваших нужд */
+            margin-bottom: 120px; /* Отступ между значком и кнопкой */
         }
 
         .play-button {
             border: 2px solid #ffee00; /* Жёлтый цвет границ */
-    border-radius: 10px; /* Сглаженные углы */
-    background-color: transparent; /* Прозрачный фон */
-    color: #ffee00; /* Цвет текста */
-    cursor: pointer; /* Курсор в виде указателя */
-    padding: 10px 20px; /* Отступы внутри кнопки */
+            border-radius: 10px; /* Сглаженные углы */
+            background-color: transparent; /* Прозрачный фон */
+            color: #ffee00; /* Цвет текста */
+            cursor: pointer; /* Курсор в виде указателя */
+            padding: 10px 20px; /* Отступы внутри кнопки */
             width: 150px; /* Ширина кнопки */
-    height: 50px; /* Высота кнопки */
-    font-size: 21px; /* Размер шрифта текста в кнопке */
-    transition: background-color 0.3s, color 0.3s; /* Плавный переход для фона и цвета текста */
+            height: 50px; /* Высота кнопки */
+            font-size: 21px; /* Размер шрифта текста в кнопке */
+            transition: background-color 0.3s, color 0.3s; /* Плавный переход для фона и цвета текста */
         }
 
         .play-button:hover {
-            background-color: #0d3a0a; /* цвет фона кнопки при наведении */
+            background-color: #0d3a0a; /* Цвет фона кнопки при наведении */
+        }
+
+        /* Стиль для контейнера изображений */
+        .image-container {
+            position: absolute; /* Абсолютное позиционирование */
+            bottom: 20px; /* Отступ от нижней части экрана */
+            left: 20px; /* Отступ слева */
+            display: flex; /* Используем flex для расположения изображений */
+            flex-direction: column; /* Вертикальное выравнивание изображений */
+        }
+
+        .image-container img {
+            width: 50px; /* Ширина изображений */
+            height: 50px; /* Высота изображений */
+            margin-top: 10px; /* Отступ между изображениями */
+        }
+
+        .discord-link {
+            display: block; /* Отображение ссылки как блока для кликабельного изображения */
+            margin-top: 10px; /* Отступ сверху */
+        }
+
+        .discord-link img {
+            width: 50px; /* Ширина иконки Discord */
+            height: 50px; /* Высота иконки Discord */
         }
     </style>
 </head>
@@ -44,5 +70,14 @@
     <a href="https://example.com" target="_blank"> <!-- Укажите свою ссылку -->
         <button class="play-button">Играть</button>
     </a>
+
+    <!-- Контейнер для нижних изображений и кнопки Discord -->
+    <div class="image-container">
+        <img src="logo_photon.gif" alt="Изображение 1"> <!-- Замените на путь к вашему первому изображению -->
+        <img src="logo_unity.gif" alt="Изображение 2"> <!-- Замените на путь к вашему второму изображению -->
+        <a class="discord-link" href="https://discord.gg/67A7m9cvvg" target="_blank"> <!-- Замените на ссылку на ваш Discord сервер -->
+            <img src="discord_icon.png" alt="Discord"> <!-- Замените на путь к изображению Discord -->
+        </a>
+    </div>
 </body>
 </html>
