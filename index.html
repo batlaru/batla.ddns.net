@@ -1,4 +1,20 @@
 <html>
+	<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фон из трёх изображений</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh; /* Высота заднего фона на всю высоту окна */
+            background-image: url('main_bg_left_gg.jpg'), url('main_bg_right_gg.jpg'), url('image3.jpg');
+            background-size: cover; /* Заполняет блок изображением */
+            background-repeat: no-repeat; /* Изображения не повторяются */
+            background-position: left center, center center, right center; /* Позиционирование изображений */
+        }
+    </style>
+</head>
+<body>
 <head>
 <script type="text/javascript" src="asset/_static/js/bundle-playback.js" charset="utf-8"></script>
 <script type="text/javascript" src="asset/_static/js/wombat.js" charset="utf-8"></script>
