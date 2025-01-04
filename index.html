@@ -50,6 +50,29 @@
         .play-button:hover {
             background-color: #0d3a0a; /* Цвет фона кнопки при наведении */
         }
+         .disk-button {
+    position: absolute;
+    bottom: 300px; /* Перемещаем кнопку выше на 100 пикселей */
+    left: 50%; /* Центрируем кнопку по горизонтали */
+    transform: translateX(-50%); /* Сдвигаем на половину ширины кнопки для центрирования */
+    border: 2px solid #ffee00; /* Жёлтый цвет границ */
+    border-radius: 10px; /* Сглаженные углы */
+    background-color: transparent; /* Прозрачный фон */
+    color: #ffee00; /* Цвет текста */
+    cursor: pointer; /* Курсор в виде указателя */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    width: 150px; /* Ширина кнопки */
+    height: 80px; /* Высота кнопки */
+    font-size: 21px; /* Размер шрифта текста в кнопке */
+    transition: background-color 0.3s, color 0.3s; /* Плавный переход для фона и цвета текста */
+}
+
+
+
+        .disk-button:hover {
+            background-color: #0d3a0a; /* Цвет фона кнопки при наведении */
+        }
+
 
         /* Стиль для контейнера изображений */
         .image-container {
@@ -84,7 +107,7 @@
         <button class="play-button">Скачать Торрент</button>
     </a>
     <a href="https://drive.google.com/file/d/ВАШ_ИДЕНТИФИКАТОР_ДОКУМЕНТА/view?usp=sharing" target="_blank"> <!-- Укажите ссылку на ваш файл в Google Диске -->
-    <button class="play-button">Скачать с Google Диска</button>
+    <button class="disk-button">Скачать с Google Диска</button>
 </a>
 
 
