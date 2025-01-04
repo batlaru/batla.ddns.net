@@ -31,7 +31,7 @@
         .play-button {
     position: absolute;
     bottom: 400px; /* Перемещаем кнопку выше на 100 пикселей */
-    left: 30%; /* Центрируем кнопку по горизонтали */
+    left: 40%; /* Центрируем кнопку по горизонтали */
     transform: translateX(-50%); /* Сдвигаем на половину ширины кнопки для центрирования */
     border: 2px solid #ffee00; /* Жёлтый цвет границ */
     border-radius: 10px; /* Сглаженные углы */
@@ -62,27 +62,7 @@
         <a href="https://drive.google.com/file/d/1OeimnFkWfUQjSM8i-UPE60fSXfvPPqBQ/view?usp=sharing" class="underline-link">Инструкция</a>
     </div>
 
-    <script>
-        const link = document.querySelector('.underline-link');
-        const container = document.querySelector('#custom-link-container');
-
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
-            const x = event.clientX;
-            const y = event.clientY;
-            const width = link.offsetWidth;
-            const height = link.offsetHeight;
-
-            const left = x - (width / 2);
-            const top = y - (height / 2);
-
-            const newWindow = window.open('', '', 'width=300,height=300,top=' + top + ',left=' + left);
-            newWindow.document.write('<a href="' + this.href + '">' + this.innerHTML + '</a>');
-            newWindow.focus();
-        });
-    </script>
-
-
+  
         .play-button:hover {
             background-color: #0d3a0a; /* Цвет фона кнопки при наведении */
         }
