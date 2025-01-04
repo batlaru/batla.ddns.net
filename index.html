@@ -45,6 +45,42 @@
     transition: background-color 0.3s, color 0.3s; /* Плавный переход для фона и цвета текста */
 }
 
+          .underline-link:hover {
+            text-decoration: underline;
+        }
+        .underline-link {
+            color: #ffee00;
+            text-decoration: none;
+        }
+        #custom-link-container {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div id="custom-link-container">
+        <a href="https://drive.google.com/file/d/1OeimnFkWfUQjSM8i-UPE60fSXfvPPqBQ/view?usp=sharing" class="underline-link">Инструкция</a>
+    </div>
+
+    <script>
+        const link = document.querySelector('.underline-link');
+        const container = document.querySelector('#custom-link-container');
+
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const x = event.clientX;
+            const y = event.clientY;
+            const width = link.offsetWidth;
+            const height = link.offsetHeight;
+
+            const left = x - (width / 2);
+            const top = y - (height / 2);
+
+            const newWindow = window.open('', '', 'width=300,height=300,top=' + top + ',left=' + left);
+            newWindow.document.write('<a href="' + this.href + '">' + this.innerHTML + '</a>');
+            newWindow.focus();
+        });
+    </script>
 
 
         .play-button:hover {
@@ -106,9 +142,7 @@
     <a href=https://drive.google.com/file/d/1HX7z1hNr_CCpwOOQQBtj8-jSQxDfpEul/view?usp=sharing" target="_blank"> <!-- Укажите свой торрент -->
         <button class="play-button">Скачать Торрент</button>
     </a>
-    <a href="**Инструкции по установке**
-Скачайте установочный файл игры
-> https://drive.google.com/drive/folders/12w765UpufcABceNnaGItBpF3stsrwbQn?usp=sharing" target="_blank"> <!-- Укажите ссылку на ваш файл в Google Диске -->
+    <a href="https://drive.google.com/file/d/1CrHK7RWuG_5QD8x_6falRMeoL2lm4Mxw/view?usp=sharing" target="_blank"> <!-- Укажите ссылку на ваш файл в Google Диске -->
     <button class="disk-button">Скачать с Google Диска</button>
 </a>
 
